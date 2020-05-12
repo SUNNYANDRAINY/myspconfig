@@ -1,0 +1,9 @@
+zuul:
+  routes: # 定义服务转发规则
+    item-service: # 任意取得
+      path: /item-service/** # 配置请求url的请求规则
+      #url: http://127.0.0.1:8081  # 真正的微服务地址，path匹配的请求都转发到这里
+      serviceId: app-item
+    order-service: # 名字尽量和业务系统相关
+      path: /order-service/**
+      serviceId: app-order
